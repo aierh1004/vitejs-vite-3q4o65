@@ -4,9 +4,13 @@
 </template>
 <script>
 import TheHeader from './components/layouts/TheHeader.vue';
+
 export default {
-  components: TheHeader,
-};
+    components: {
+            TheHeader,
+    },
+
+}
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
