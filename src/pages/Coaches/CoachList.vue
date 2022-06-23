@@ -1,5 +1,6 @@
 <template>
-<section>
-  <h1> HELLOOOOOOOOOOOOOOOOOO</h1>
-</section>
+  <section>
+    <h1>HELLO</h1>
+  </section>
+  <section>WORLD</section>
 </template>
