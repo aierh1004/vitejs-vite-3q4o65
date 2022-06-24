@@ -24,16 +24,26 @@
 <script>
 import CoachItem from '../../components/coaches/CoachItem.vue';
 export default {
-  conponents: {
-    CoachItem,
-  },
+  components: { CoachItem },
   computed: {
     filteredCoaches() {
       return this.$store.getters['coaches/coaches'];
     },
     hasCoaches() {
-      return this.$store.getters['coacher/hasCoaches'];
+      return this.$store.getters['coaches/hasCoaches'];
     },
   },
 };
 </script>
+<style scoped>
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+</style>

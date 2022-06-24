@@ -5,8 +5,8 @@
     <div>
       <span v-for="area in areas" :key="area">{{ area }}</span>
     </div>
-    <div>
-      <router-link :to="conchContackLink">Contact</router-link>
+    <div class="actions">
+      <router-link :to="coachContactLink">Contact</router-link>
       <router-link :to="coachDetailsLink">View Detail</router-link>
     </div>
   </li>
