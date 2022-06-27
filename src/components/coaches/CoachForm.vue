@@ -34,7 +34,6 @@
           v-model="areas.val"
         />
         <label for="frontend">Frontend Development</label>
-        <p v-if="!areas.isValid">At least one expertise must be selected.</p>
       </div>
       <div>
         <input
@@ -49,6 +48,7 @@
         <input type="checkbox" id="career" value="career" v-model="areas.val" />
         <label for="career">Career Advistory</label>
       </div>
+      <p v-if="!areas.isValid">At least one expertise must be selected.</p>
     </div>
     <p v-if="!this.formIsValid">
       Please fix the above errors and submit again!
@@ -104,7 +104,7 @@ export default {
         this.rate.isValid = false;
         this.formIsValid = false;
       }
-      if (this.areas.length === 0) {
+      if (this.areas.val.length === 0) {
         this.areas.isValid = false;
         this.formIsValid = false;
       }
