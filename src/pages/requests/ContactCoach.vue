@@ -1,12 +1,12 @@
 <template>
   <form @submit.prevent="submitForm">
     <div class="form-control">
-      <label for="email">Your email</label>
-      <input type="email" id="email" v-mode.trim="email" />
+      <label for="email">Your E-mail</label>
+      <input type="email" id="email" v-model.trim="email" />
     </div>
     <div class="form-control">
       <label for="message">Message</label>
-      <textarea id="message" rows="5" v-mode.trim="message"></textarea>
+      <textarea id="message" rows="5" v-model.trim="message"></textarea>
     </div>
     <p class="errors" v-if="!formIsValid">
       Please enter a valid email and non-empty address.
@@ -41,6 +41,7 @@ export default {
       this.$store.dispatch('requests/contactCoach', {
         email: this.email,
         message: this.message,
+        // coachId: this.$route.id,
         coachId: this.$route.param.id,
       });
       this.$router.replace('/coaches');
