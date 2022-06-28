@@ -2,7 +2,7 @@ export default {
   login() {},
   async signup(context, payload) {
     const response = await fetch(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyB4GigzbGpaKNgcfMMHR1qILFvf1Y9we4g',
+      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB4GigzbGpaKNgcfMMHR1qILFvf1Y9we4g',
       {
         method: 'POST',
         body: JSON.stringify({
@@ -16,7 +16,7 @@ export default {
     if (!response.ok) {
       console.log(responseData);
       const error = new Error(
-        responseData.message || 'Failed to authenticate.'
+        responseData.message || 'Failed to authenticate. Check your login data.'
       );
       throw error;
     }
