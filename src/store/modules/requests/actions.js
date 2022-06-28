@@ -40,12 +40,12 @@ export default {
     for (const key in responseData) {
       const request = {
         id: key,
-        coachID: coachId,
+        coachId: coachId,
         userEmail: responseData[key].userEmail,
         message: responseData[key].message,
       };
       requests.push(request);
     }
-    context.commit('setRequest', requests);
+    context.commit('setRequests', requests);
   },
 };
