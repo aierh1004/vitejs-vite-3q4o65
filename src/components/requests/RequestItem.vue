@@ -8,15 +8,17 @@
 </template>
 
 <script>
-props:['email','message'],
-computed:{
-  emailLink(){
-    return 'mailto' + this.email;
-  }
-}
+export default {
+  props: ['email', 'message'],
+  computed: {
+    emailLink() {
+      return 'mailto' + this.email;
+    },
+  },
+};
 </script>
 
-<style>
+<style scoped>
 li {
   margin: 1rem 0;
   border: 1px solid #ccc;
