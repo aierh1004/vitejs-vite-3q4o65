@@ -1,5 +1,5 @@
 <template>
-  <base-dialog :show="!!error" title="an error occurred.">
+  <base-dialog :show="!!error" title="an error occurred." @close="handleError">
     <p>{{ error }}</p>
   </base-dialog>
   <section>
@@ -87,6 +87,9 @@ export default {
       }
 
       this.isLoading = false;
+    },
+    handleError() {
+      this.error = null;
     },
   },
 };
