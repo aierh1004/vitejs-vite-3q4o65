@@ -42,7 +42,7 @@ export default {
         email: this.email,
         message: this.message,
         // coachId: this.$route.id,
-        coachId: this.$route.param.id,
+        coachId: this.$route.params.id,
       });
       this.$router.replace('/coaches');
     },
