@@ -10,6 +10,9 @@
           >Register a Coach</base-button
         >
       </div>
+      <div v-if="isLoading">
+        <base-spinner></base-spinner>
+      </div>
       <ul v-if="hasCoaches">
         <coach-item
           v-for="coach in filteredCoaches"
@@ -32,6 +35,7 @@ export default {
   components: { CoachItem, CoachFilter },
   data() {
     return {
+      isLoading: false,
       activeFilters: {
         frontend: true,
         backend: true,
@@ -70,8 +74,10 @@ export default {
     setFilters(updateFilters) {
       this.activeFilters = updateFilters;
     },
-    loadCoaches() {
-      this.$store.dispatch('coaches/loadCoaches');
+    async loadCoaches() {
+      this.isLoading = true;
+      await this.$store.dispatch('coaches/loadCoaches');
+      this.isLoading = false;
     },
   },
 };
