@@ -63,9 +63,9 @@ export default {
       return this.$store.getters['coaches/hasCoaches'];
     },
   },
-  created(){
+  created() {
     this.loadCoaches();
-  }
+  },
   methods: {
     setFilters(updateFilters) {
       this.activeFilters = updateFilters;
